@@ -1,0 +1,12 @@
+/* 1) Font reset as base layer */
+@layer base {
+    body {
+      font-family: system-ui, sans-serif;
+    }
+  }
+  
+  /* 2) Scroll-snap helper on sections */
+  .scroll-snap > * {
+    scroll-snap-align: start;
+  }
+  
