@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Eliezer Then</title>
+  
+  <!-- Tailwind CSS Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B01', 
+            secondary: '#353535',
+            accent: '#FCD34D'
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP CDN for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-secondary relative">
+  <!-- Fixed Back Button on Top-Left -->
+  <a href="index.html" class="fixed top-6 left-6 bg-secondary bg-gray-400 hover:bg-gray-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg z-50">
+    <span class="text-3xl">&#8592;</span>
+  </a>
+
+  <div id="resumeContainer" class="container mx-auto px-6 py-16">
+    <!-- Animated Header -->
+    <div class="flex flex-col items-center justify-center mb-10">
+      <h1 id="resumeHeading" class="text-5xl font-bold bg-gradient-to-r from-primary to-accent text-black drop-shadow-xl inline-block px-8 py-4 rounded-lg">
+        My Resume
+      </h1>
+    </div>
+    <!-- PDF Embed Container without side borders -->
+    <div class="shadow-2xl rounded-xl overflow-hidden mx-auto max-w-4xl">
+      <iframe src="Eliezer-Then-Resume.pdf#toolbar=0" width="100%" height="700px" class="bg-white" style="border: none;">
+        This browser does not support PDFs. Please download the resume to view it: 
+        <a href="Eliezer-Then-Resume.pdf#toolbar=0">Download Resume</a>.
+      </iframe>
+    </div>
+    <!-- Download Resume Button -->
+    <div class="mt-8 flex justify-center">
+      <a href="Eliezer-Then-Resume.pdf#toolbar=0" download class="bg-secondary bg-gray-400 hover:bg-gray-700 transition-colors font-semibold py-3 px-8 rounded-full shadow-lg text-white">
+        Download Resume
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    // Animate header and container for a dynamic entrance.
+    gsap.from("#resumeHeading", { duration: 1, opacity: 0, y: -50, ease: "power4.out" });
+    gsap.from("#resumeContainer", { duration: 1.5, opacity: 0, y: 50, ease: "power4.out", delay: 0.5 });
+  </script>
+</body>
+</html>
