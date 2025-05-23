@@ -1,12 +1,175 @@
+/* style.css */
+
 /* 1) Font reset as base layer */
 @layer base {
-    body {
-      font-family: system-ui, sans-serif;
-    }
+  body {
+    font-family: system-ui, sans-serif;
   }
-  
-  /* 2) Scroll-snap helper on sections */
-  .scroll-snap > * {
-    scroll-snap-align: start;
-  }
-  
+}
+
+/* Your new palette */
+:root {
+  --color-ice-cold:      #a0d2eb;
+  --color-freeze-purple: #e5eaf5;
+  --color-medium-purple: #d0bdf4;
+  --color-purple-pain:   #8458B3;
+  --color-heavy-purple:  #a28089;
+
+  --primary-color:   var(--color-purple-pain);
+  --secondary-color: var(--color-medium-purple);
+  --bg-dark:         var(--color-heavy-purple);
+  --bg-light:        var(--color-freeze-purple);
+  --text-light:      #ffffff;
+  --text-dark:       var(--color-heavy-purple);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--text-dark);
+  background: var(--bg-light);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation Bar */
+.nav {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: transparent;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: var(--text-light);
+  font-weight: 500;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0; height: 2px;
+  background: var(--text-light);
+  transition: width 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--color-freeze-purple);
+  color: var(--color-heavy-purple);
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.linkedin-btn:hover {
+  background: var(--color-ice-cold);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-freeze-purple), var(--color-purple-pain));
+  color: var(--text-light);
+  text-align: center;
+  position: relative;
+}
+.hero-content {
+  z-index: 1;
+}
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* About Section */
+.about-section {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+.profile-pic {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Projects Section */
+.projects-section {
+  background: #f0f0f0;
+  padding: 4rem 2rem;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+
+/* Resume Section */
+.resume-section {
+  background: #f0f0f0;
+  padding: 4rem 2rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-dark);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.footer p {
+  color: #ccc;
+}
+.footer a {
+  color: var(--color-freeze-purple);
+}
