@@ -94,14 +94,15 @@ a:hover {
   background: var(--color-ice-cold);
 }
 
-/* Hero Section */
+/* HERO Section */
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-freeze-purple), var(--color-purple-pain));
+  /* Changed from gradient to a single color */
+  background: var(--bg-light);
   color: var(--text-light);
   text-align: center;
   position: relative;
@@ -121,7 +122,8 @@ a:hover {
 
 /* About Section */
 .about-section {
-  background: #fff;
+  /* Changed from #fff to a unified background */
+  background: var(--bg-light);
   padding: 4rem 2rem;
 }
 .profile-pic {
@@ -140,7 +142,8 @@ a:hover {
 
 /* Projects Section */
 .projects-section {
-  background: #f0f0f0;
+  /* Changed from #f0f0f0 to a unified background */
+  background: var(--bg-light);
   padding: 4rem 2rem;
 }
 .section-title {
@@ -151,13 +154,15 @@ a:hover {
 
 /* Testimonials Section */
 .testimonials-section {
-  background: #fff;
+  /* Changed from #fff to a unified background */
+  background: var(--bg-light);
   padding: 4rem 2rem;
 }
 
 /* Resume Section */
 .resume-section {
-  background: #f0f0f0;
+  /* Changed from #f0f0f0 to a unified background */
+  background: var(--bg-light);
   padding: 4rem 2rem;
 }
 
